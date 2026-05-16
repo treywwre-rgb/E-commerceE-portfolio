@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    
 </head>
 <body>
     <section id="landing">
@@ -108,15 +108,18 @@
                 <h2 class="section__title">
                     Featured <span class="purple">Books</span>
                 </h2>
-                <select id="filter">
+                <select id="filter" onchange="filterbooks(event)">
                     <option value="" disabled selected-Sort></option>
                     <option value="LOW_TO_HIGH">Price: Low to High</option>
                     <option value="HIGH_TO_LOW">Price: High to Low</option>
                     <option value="RATING">Rating</option>
                 </select>
                 </div>
+                
                 <div class="books">
-                    
+                    <div class="books books__loading">
+                    <i class="fas fa-spinner books__loading--spinner"></i>
+                    </div>
                     <div class="book">
                         <figure class="book__img--wrapper">
                             <img class="book__img" src="assets/atomic habits.jpg" alt="">
@@ -364,5 +367,6 @@
             </div>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
