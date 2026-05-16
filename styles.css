@@ -364,7 +364,12 @@ FEATURES
 .book__price--normal {
     text-decoration: line-through;
     padding-right: 6px;
-    color: #bfbfbf;
+    color: #bfbfbf;     
+}
+
+.book__price--sale {
+    color: red;
+    font-weight: bold;
 }
 
 /*
