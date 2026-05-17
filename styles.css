@@ -358,10 +358,8 @@ FEATURES
 
 .book__ratings {
     margin-bottom: 8px;
-    color: #fabf2a
+    color: #fabe00;
 }
-
-.b
 
 .book__price--normal {
     text-decoration: line-through;
