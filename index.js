@@ -35,7 +35,7 @@ async function renderBooks(filter) {
         ${ratingHTML(book.rating)}
     </div>
     <div class="book__price">
-        <span>$${priceHTML(book.originalPrice, book.salePrice)}</span>
+        ${priceHTML(book.originalPrice, book.salePrice)}
     </div>
 </div>`
     })
@@ -45,13 +45,16 @@ async function renderBooks(filter) {
 }
 
 function priceHTML(originalPrice, salePrice) {
-    if (!salePrice) {
-        return originalPrice.toFixed(2);
-    }  
-    else {
-        return `<span class="book__price--original">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`;
-    } 
+  if (!salePrice) {
+    return `<span class="book__price--sale">$${originalPrice.toFixed(2)}</span>`;
+  } else {
+    return `
+      <span class="book__price--normal">$${originalPrice.toFixed(2)}</span>
+      <span class="book__price--sale">$${salePrice.toFixed(2)}</span>
+    `;
+  }
 }
+
 function ratingHTML(rating) {
     let ratingHTML = "";
 
